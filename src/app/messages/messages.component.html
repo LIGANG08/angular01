@@ -1,11 +1,228 @@
-<div *ngIf="messageService.messages.length">
+<!--<div *ngIf="messageService.messages.length">-->
 
-  <h2>Messages</h2>
-  <button class="clear"
-          (click)="messageService.clear()">clear</button>
-  <div *ngFor='let message of messageService.messages'> {{message}} </div>
+  <!--<h2>Messages</h2>-->
+  <!--<button class="clear"-->
+          <!--(click)="messageService.clear()">clear</button>-->
+  <!--<div *ngFor='let message of messageService.messages'> {{message}} </div>-->
 
-  <!--*ngIf 只有当在有消息时才会显示消息区。-->
-  <!--*ngFor 用来在一系列div元素中展示消息列表。-->
-  <!--Angular 的事件绑定把按钮的 click 事件绑定到了 MessageService.clear()。-->
-</div>
+  <!--&lt;!&ndash;*ngIf 只有当在有消息时才会显示消息区。&ndash;&gt;-->
+  <!--&lt;!&ndash;*ngFor 用来在一系列div元素中展示消息列表。&ndash;&gt;-->
+  <!--&lt;!&ndash;Angular 的事件绑定把按钮的 click 事件绑定到了 MessageService.clear()。&ndash;&gt;-->
+<!--</div>-->
+<!--<p>My cars:</p>-->
+<!--<input type="checkbox" ng-model="all"> Check all<br><br>-->
+<!--<input type="checkbox" ng-checked="all">Volvo<br>-->
+<!--<input type="checkbox" ng-checked="all">Ford<br>-->
+<!--<input type="checkbox" ng-checked="all">Mercedes-->
+<!--<p>点击 "Check all" 选择所有的车。</p>-->
+
+<!--<p>点击按钮:</p>-->
+<!--<button ng-click="count = count + 1" ng-init="count=0">OK</button>-->
+<!--<p>按钮被点击了 {{'count'}} 次。</p>-->
+
+<!--<p>实例中，按钮每被点击一次变量 "count" 会自动加 1。</p>-->
+
+<!--<p ng-cloak>{{ 5 + 5 }}</p>-->
+<!--<p><b>注意：</b> 该实例只是演示了指令的应用。</p>-->
+
+<!--<input ng-copy="count = count + 1" ng-init="count=0" value="拷贝这个文本" />-->
+
+<!--<p>文本被拷贝 {{"count"}} 次。</p>-->
+<!--<p>实例中变量 "count" 的值在输入框的文本被拷贝时会自动增加 1。</p>-->
+
+<!--<p>我的第一个表达式: {{ 5 + 5 }}</p>-->
+<!--<p>使用 ng-csp 指令, 你可以修改 AngularJS 执行代码的方式。</p>-->
+<!--<p>AngularJS 的执行方式提高了 30% 的性能</p>-->
+
+<!--<div ng-init="myVar = 'http://www.runoob.com'">-->
+  <!--<h1>菜鸟教程</h1>-->
+  <!--<p>访问 <a ng-href="myVar = 'http://www.runoob.com'"></a> 学习!</p>-->
+<!--</div>-->
+
+<!--保留 HTML: <input type="checkbox" ng-model="myVar" ng-init="myVar = true">-->
+<!--<div ng-if="myVar">-->
+  <!--<h1>Welcome</h1>-->
+  <!--<p>Welcome to my home.</p>-->
+  <!--<hr>-->
+<!--</div>-->
+
+<!--<div>-->
+  <!--<p>在输入框中，输入一些文本，并使用逗号分隔它们：</p>-->
+  <!--<input ng-model="customers" ng-list/>-->
+  <!--<p>当使用 ng-list 指令时，你的输入信息会转换为数组，如下所示：</p>-->
+  <!--<pre  ng-model="customers">{{'customers'}}</pre>-->
+<!--</div>-->
+
+<!--<div ng-controller="myCtrl">-->
+  <!--<input ng-model="name">-->
+  <!--<p>input 输入框的值绑定了变量 "name" :</p>-->
+  <!--{{name}}-->
+<!--</div>-->
+<!--<script>-->
+  <!--var app = angular.module('myApp', []);-->
+  <!--app.controller('myCtrl', function($scope) {-->
+    <!--$scope.name = "John Doe";-->
+  <!--});-->
+<!--</script>-->
+<!--<p>该实例演示了如何使用 ng-model 指令绑定输入框的值到 scope 变量中。</p>-->
+
+
+<!--<div ng-mouseenter="count = count + 1" ng-init="count=0">鼠标穿过我!</div>-->
+<!--<h1>{{count}}</h1>-->
+<!--<p>-->
+  <!--该实例在鼠标穿过 DIV 元素时，计算变量 "count" 会自动加 1。</p>-->
+
+<!--<input type="checkbox" ng-model="showDetails">-->
+<!--<details ng-open="showDetails">-->
+  <!--<summary>学的不仅是技术，更是梦想！</summary>-->
+  <!--<p> - 菜鸟教程</p>-->
+<!--</details>-->
+
+<!--<body ng-app="">-->
+<!--勾选复选框设置输入框为只读:<input type="checkbox" ng-model="all"><br>-->
+<!--<br>-->
+<!--<input type="text" ng-readonly="all">-->
+
+<!--我喜欢的网站-->
+<!--<select ng-model="myVar">-->
+  <!--<option value="runoob">www.runoob.com-->
+  <!--<option value="google">www.google.com-->
+  <!--<option value="taobao">www.taobao.com-->
+<!--</select>-->
+<!--<hr>-->
+<!--<div ng-switch="myVar">-->
+  <!--<div ng-switch-when="runoob">-->
+    <!--<h1>菜鸟教程</h1>-->
+    <!--<p>欢迎访问菜鸟教程</p>-->
+  <!--</div>-->
+  <!--<div ng-switch-when="google">-->
+    <!--<h1>Google</h1>-->
+    <!--<p>欢迎访问Google</p>-->
+  <!--</div>-->
+  <!--<div ng-switch-when="taobao">-->
+    <!--<h1>淘宝</h1>-->
+    <!--<p>欢迎访问淘宝</p>-->
+  <!--</div>-->
+  <!--<div ng-switch-default>-->
+    <!--<h1>切换</h1>-->
+    <!--<p>选择不同选项显示对应的值。</p>-->
+  <!--</div>-->
+<!--</div>-->
+<!--<hr>-->
+<!--<p> ng-switch 指令根据当前的值显示或隐藏对应部分。</p>-->
+
+
+<!--<div data-ng-init="quantity=1;price=5">-->
+  <!--<h2>价格计算器</h2>-->
+  <!--数量: <input type="number" ng-model="quantity">-->
+  <!--价格: <input type="number" ng-model="price">-->
+  <!--<p><b>总价:</b> {{'quantity * price'}}</p>-->
+<!--</div>-->
+
+
+<!--推荐或热点标题-->
+<!--<div class="comTitStyle" ng-controller="newsCtrl">-->
+  <!--<div>-->
+    <!--<a ng-click="titleClick(0)" ng-class="{'selected':focusIndex==0}" class="selected">推荐</a>-->
+  <!--</div>-->
+  <!--<div>-->
+    <!--<a ng-click="titleClick(1)" ng-class="{'selected':focusIndex==1}">热点</a>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<style>-->
+  <!--.comTitStyle{-->
+    <!--width: 16rem;-->
+    <!--height: 2rem;-->
+  <!--}-->
+  <!--.comTitStyle > div{-->
+    <!--display: inline-block;-->
+    <!--width: 7.9rem;-->
+    <!--height: 2rem;-->
+    <!--vertical-align: middle;-->
+    <!--text-align: center;-->
+    <!--line-height: 2rem;-->
+  <!--}-->
+  <!--.comTitStyle > div > a{-->
+    <!--width: 2.5rem;-->
+    <!--height: 1.9rem;-->
+    <!--display: inline-block;-->
+    <!--vertical-align: middle;-->
+    <!--font-size: .8rem;-->
+    <!--color: #666666;-->
+
+  <!--}-->
+  <!--.comTitStyle > div > .selected{-->
+    <!--border-bottom: 1px solid #3BB4C1;-->
+    <!--font-weight: bold;-->
+  <!--}-->
+
+<!--</style>-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html ng-app="formExample">-->
+<!--<head>-->
+  <!--<meta charset="UTF-8">-->
+  <!--<title></title>-->
+  <!--<script src="../js/angular.js"></script>-->
+  <!--<script>-->
+    <!--angular.module('formExample', [])-->
+      <!--.controller('FormController', ['$scope', function($scope)-->
+      <!--{-->
+      <!--}]);-->
+  <!--</script>-->
+  <!--<style>-->
+    <!--.strike {-->
+      <!--text-decoration: line-through;-->
+    <!--}-->
+    <!--.bold {-->
+      <!--font-weight: bold;-->
+    <!--}-->
+    <!--.red {-->
+      <!--color: red;-->
+    <!--}-->
+  <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div>-->
+  <!--<p class="strike" ng-class="{strike: deleted, bold: important, red: error}">通过映射的方式</p>-->
+  <!--<input type="checkbox" ng-model="deleted">添加strike样式<br>-->
+  <!--<input type="checkbox" ng-model="important">添加bold样式<br>-->
+  <!--<input type="checkbox" ng-model="error">添加错误样式-->
+  <!--<hr>-->
+  <!--<p class="bold" ng-class="style">使用字符串的方式</p>-->
+  <!--<input type="text" ng-model="style" placeholder="输入 bold、 strike 或 red">-->
+  <!--<hr>-->
+  <!--<p class="red" ng-class="[style1, style2, style3]">使用数组的方式</p>-->
+  <!--<input ng-model="style1" placeholder="输入: bold, strike 或 red"><br>-->
+  <!--<input ng-model="style2" placeholder="输入: bold, strike 或 red"><br>-->
+  <!--<input ng-model="style3" placeholder="输入: bold, strike 或 red"><br>-->
+  <!--<hr/>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+  <style type="text/css">
+    .ng-cloak{display:none;}
+  </style>
+  </head>
+<body ng-app="app" ng-controller="ctrl" ng-cloak class="ng-cloak">
+      <input type="text" ng-model="color" />
+      <input type="number" ng-model="num" />
+      <p ng-style="{'color':color, 'fontSize':num+'px'}">赵一鸣技术博客</p>
+  </body>
+  </html>
+  <script type="text/javascript" src="http://www.zymseo.com/js/angular.min.js"></script>
+  <script type="text/javascript">
+        angular.module('app/messages', [])
+        .controller('ctrl', ['$scope', function($scope){
+
+          }]);
+  </script>

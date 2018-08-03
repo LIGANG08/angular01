@@ -1,8 +1,123 @@
-<h1>{{title}}</h1>
-<!--<app-heroes></app-heroes>-->
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
-</nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<!--&lt;!&ndash;<h1>{{title}}</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<app-heroes></app-heroes>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<nav>&ndash;&gt;-->
+  <!--&lt;!&ndash;<a routerLink="/dashboard">Dashboard</a>&ndash;&gt;-->
+  <!--&lt;!&ndash;<a routerLink="/heroes">Heroes</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</nav>&ndash;&gt;-->
+<!--&lt;!&ndash;<router-outlet></router-outlet>&ndash;&gt;-->
+<!--&lt;!&ndash;<app-messages></app-messages>&ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head lang="en">-->
+  <!--<meta charset="UTF-8">-->
+  <!--<title>我们虽然很穷，但是我们有梦想</title>-->
+  <!--<script src="angular.js"></script>-->
+<!--</head>-->
+<!--<body ng-app="zcsApp" ng-controller="zcsControl">-->
+<!--用 户 名：<input type="text" ng-model="name" /><br>-->
+<!--密  码：<input type="text" ng-model="pwd" /><br>-->
+<!--确认密码：<input type="text" ng-model="pwd2" /><br>-->
+<!--<input type="button" value="注册" ng-click=" ZhuCe()"/>-->
+<!--<input type="button" value="登入" ng-click=" Enter()"/>-->
+<!--<span style="color: red">{{message}}</span>-->
+<!--</body>-->
+<!--<script>-->
+  <!--// var data={"name":"admin","pwd":"12"};-->
+  <!--function PersonalInfo(name,pwd){-->
+    <!--this.name=name;-->
+    <!--this.pwd=pwd;-->
+  <!--}-->
+  <!--PersonalInfo.prototype.savaLocalStorage= function () {-->
+    <!--var storage=window.localStorage.getItem("PersonalInfo");//得到的数据是字符串-->
+    <!--storage=JSON.parse(storage) ||[];//字符串转换成对象-->
+    <!--storage.push(this);-->
+    <!--window.localStorage.setItem("PersonalInfo",JSON.stringify(storage));-->
+  <!--};-->
+  <!--PersonalInfo.selectByName= function (name,pwd) {-->
+    <!--var storage=window.localStorage.getItem("PersonalInfo");-->
+    <!--storage= storage?JSON.parse(storage):[];-->
+    <!--return storage.some(function (v) {//返回一个布尔值-->
+      <!--return v.name===name&& v.pwd;-->
+    <!--})-->
+  <!--};-->
+  <!--PersonalInfo.prototype.hasName= function (name,pwd,fn,fn2) {-->
+    <!--var storage=window.localStorage.getItem("PersonalInfo");//得到的数据是字符串-->
+    <!--storage= storage?JSON.parse(storage):[];-->
+    <!--var data=storage;-->
+    <!--for(var i=0;i<data.length;i++){-->
+      <!--var v=data[i];-->
+      <!--if(name!==v.name&& pwd!==v.pwd) {-->
+        <!--fn();-->
+        <!--return;-->
+      <!--}-->
+    <!--};-->
+  <!--};-->
+  <!--angular.module("zcsApp",[])-->
+    <!--.controller("zcsControl",["$scope", function ($scope) {-->
+      <!--$scope.ZhuCe= function () {-->
+        <!--$scope.message="";-->
+        <!--var name=$scope.name;-->
+        <!--var pwd=$scope.pwd;-->
+        <!--var pwd2=$scope.pwd2;-->
+<!--// 若是输入为空或者undefined时-->
+        <!--if(name===undefined||name.trim().length===0||pwd===undefined||pwd.trim().length===0||pwd2===undefined||pwd2.trim().length===0){-->
+          <!--$scope.message="请输入完整信息";-->
+          <!--return;-->
+        <!--}-->
+<!--// 若输入的密码和确认密码不一致时-->
+        <!--if(pwd!==pwd2){-->
+          <!--$scope.message="俩次输入的密码不一致";-->
+          <!--return;-->
+        <!--}-->
+<!--// 判断本地是不是已经有这个名字-->
+        <!--if(PersonalInfo.selectByName(name,pwd)){-->
+          <!--$scope.message="此账号已注册";-->
+          <!--return;-->
+        <!--}-->
+<!--// 存储信息-->
+        <!--var data=new PersonalInfo(name,pwd);-->
+        <!--data.savaLocalStorage();-->
+      <!--};-->
+      <!--$scope.Enter= function () {-->
+        <!--$scope.message="";-->
+        <!--var name=$scope.name;-->
+        <!--var pwd=$scope.pwd;-->
+        <!--var per=new PersonalInfo(name,pwd);-->
+        <!--if(PersonalInfo.selectByName(name)){-->
+          <!--$scope.message="登入成功";-->
+          <!--return;-->
+        <!--}-->
+        <!--per.hasName(name,pwd,function () {-->
+          <!--$scope.message="账号错误或者密码不正确"-->
+        <!--});//得到登入的信息-->
+      <!--}-->
+    <!--}])-->
+<!--</script>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <script type="text/javascript" src="js/jquery.js" ></script>
+  <script type="text/javascript" src="js/angular.js" ></script>
+  <script type="text/javascript" src="js/angular-mocks.js" ></script>
+  <script type="text/javascript" src="js/index.js" ></script>
+  <script type="text/javascript" src="js/indexs.js" ></script>
+</head>
+<body>
+<div ng-app="testDev" ng-controller="tc" >
+  <table border="1" width="100%">
+    <tr>
+      <th>id</th>
+      <th>用户名</th>
+    </tr>
+    //循环输出数据
+    <tr ng-repeat="user in users">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
